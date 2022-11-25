@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CustomForm from "./components/Form";
 
-function App() {
+const App = () => {
+  const [visible, setVisible] = React.useState(true);
+  const fulfill = (): void => setVisible(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <section>
+      <header>
+        <h1>{visible ? `Formular abschicken` : `Formular abgeschickt`}</h1>
       </header>
-    </div>
+      <CustomForm onSubmit={fulfill} />
+    </section>
   );
-}
+};
 
 export default App;
