@@ -25,11 +25,10 @@ const CustomForm = ({ onSubmit }: CustomFormProps) => {
         <input
           placeholder="Bitte Nutzernamen eingeben"
           type="text"
+          className="input-field"
           {...register("username", { required: true, maxLength: 20 })}
         />
-        {errors.username && (
-          <p data-testId="error-message">User name ist ein Pflichtfeld.</p>
-        )}
+        {errors.username && <p>Username ist ein Pflichtfeld.</p>}
       </div>
       <div>
         <button>Abschicken</button>
